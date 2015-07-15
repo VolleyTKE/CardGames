@@ -43,19 +43,7 @@ public class Player {
         this.name = name;
     }
 
-//    /**PUT IN SEPERATE CLASS!!!
-//     * @return the numberOfPlayers
-//     */
-//    public int getNumberOfPlayers() {
-//        return numberOfPlayers;
-//    }
-//
-//    /**
-//     * @param numberOfPlayers the numberOfPlayers to set
-//     */
-//    public void setNumberOfPlayers(int numberOfPlayers) {
-//        this.numberOfPlayers = numberOfPlayers;
-//    }
+
 
     /**
      * @return the anteSize

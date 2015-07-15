@@ -14,8 +14,8 @@ import java.util.ArrayList;
 public class Table {
     ArrayList<Player> player = new ArrayList<Player>();    
     private Deck deck1 = new Deck();
-    Player player1 = new Player("Player1");
-    int numberOfPlayers;
+    Player player = new Player("Player");
+    private int numberOfPlayers;
     
     
     
@@ -24,8 +24,9 @@ public class Table {
         this.deck1 = deck1;
     }
     
-    Table(){
+    public Table getPokerTable(int numberOfPlayers, int antSize){
         
+        return table
     }
 
     /**
@@ -40,6 +41,25 @@ public class Table {
      */
     public void setDeck1(Deck deck1) {
         this.deck1 = deck1;
+    }
+
+    /**
+     * @return the numberOfPlayers
+     */
+    public int getNumberOfPlayers() {
+        return numberOfPlayers;
+    }
+
+    /**
+     * @param numberOfPlayers the numberOfPlayers to set
+     */
+    public void setNumberOfPlayers(int numberOfPlayers) {
+        if(!(numberOfPlayers<2) ||!(numberOfPlayers >5)){
+            this.numberOfPlayers = numberOfPlayers;
+        }
+        else{
+            System.out.println("Please pick a number between 2 or 5!");
+        }
     }
 
         
