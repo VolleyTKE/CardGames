@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class Table {
     
     
-    ArrayList<Player> table = new ArrayList<Player>();    
+    ArrayList<Player> playersAtTable = new ArrayList<Player>();    
     private Deck deck1 = new Deck();
     private Player player = new Player("player");
     private int numberOfPlayers;
@@ -23,28 +23,32 @@ public class Table {
     
     
     Table(){
+        this.playersAtTable = playersAtTable;
         this.deck1 = deck1;
     }
-    Table(){
-        
-    }
     
+    
+    
+
+    
+   
     public void setPokerTable(int numberOfPlayers, int anteSize){
-                    
+        this.setNumberOfPlayers(numberOfPlayers);
+        this.setDeck(deck1);
         
     }
 
     /**
      * @return the deck1
      */
-    public Deck getDeck1() {
+    public Deck getDeck() {
         return deck1;
     }
 
     /**
      * @param deck1 the deck1 to set
      */
-    public void setDeck1(Deck deck1) {
+    public void setDeck(Deck deck1) {
         this.deck1 = deck1;
     }
 
@@ -62,7 +66,7 @@ public class Table {
         if(!(numberOfPlayers<2) ||!(numberOfPlayers >5)){
                     for ( int i = 1; i <=numberOfPlayers ; i++ ) {
                 Player player = new Player("Player" + i);
-                table.add(player);
+                playersAtTable.add(player);
                 i++;
             }
             
