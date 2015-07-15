@@ -5,22 +5,48 @@
  */
 package playground2;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Chris
  */
 public class Player {
     private String name;
-    //private int numberOfPlayers = 0; put in DIFFERENT CLASS!
     private int anteSize = 50;
     private int walletSize = anteSize*3;
-    private Hand hand;
+    private ArrayList<Card> hand;
+    
+    Player(){
+        
+    }
     
     Player(String name){
         this.name = name;
+        this.anteSize = getAnteSize(); //this instance is set by TABLE when entering game
+        this.walletSize = getWalletSize(); //this instance is set by TABLE when entering game
+        this.hand = getHand(); 
+    }
+    
+    Player(String name, int anteSize){
+        this.name = name;
         this.anteSize = anteSize; //this instance is set by TABLE when entering game
-        this.walletSize = walletSize;//this instance is set by TABLE when entering game
-        this.hand = hand;
+        this.walletSize = getWalletSize(); //this instance is set by TABLE when entering game
+        this.hand = getHand();
+    }
+    
+    Player(String name, ArrayList<Card> hand){
+        this.name = name;
+        this.anteSize = getAnteSize(); //this instance is set by TABLE when entering game
+        this.walletSize = getWalletSize(); //this instance is set by TABLE when entering game
+        this.hand = getHand();
+    }
+    
+    Player(String name, ArrayList<Card> hand, int anteSize, int walletSize){
+        this.name = name;
+        this.anteSize = getAnteSize(); //this instance is set by TABLE when entering game
+        this.walletSize = getWalletSize(); //this instance is set by TABLE when entering game
+        this.hand = getHand();
     }
 
     /**
@@ -48,7 +74,7 @@ public class Player {
     /**
      * @return the anteSize
      */
-    public int getAnteSize() {
+    private int getAnteSize() {
         return anteSize;
     }
 
@@ -62,28 +88,29 @@ public class Player {
     /**
      * @return the walletSize
      */
-    public int getWalletSize() {
+    private int getWalletSize() {
         return walletSize;
     }
 
     /**
      * @param walletSize the walletSize to set
      */
-    public void setWalletSize(int walletSize) {
-        this.walletSize = walletSize;
+    public void setWalletSize() {
+        this.walletSize = anteSize*3;
+        
     }
 
     /**
      * @return the hand
      */
-    public Hand getHand() {
+    private ArrayList<Card> getHand() {
         return hand;
     }
 
     /**
      * @param hand the hand to set
      */
-    public void setHand(Hand hand) {
+    public void setHand(ArrayList<Card> hand) {
         this.hand = hand;
     }
     

@@ -12,9 +12,11 @@ import java.util.ArrayList;
  * @author Chris
  */
 public class Table {
-    ArrayList<Player> player = new ArrayList<Player>();    
+    
+    
+    ArrayList<Player> table = new ArrayList<Player>();    
     private Deck deck1 = new Deck();
-    Player player = new Player("Player");
+    private Player player = new Player("player");
     private int numberOfPlayers;
     
     
@@ -23,10 +25,13 @@ public class Table {
     Table(){
         this.deck1 = deck1;
     }
-    
-    public Table getPokerTable(int numberOfPlayers, int antSize){
+    Table(){
         
-        return table
+    }
+    
+    public void setPokerTable(int numberOfPlayers, int anteSize){
+                    
+        
     }
 
     /**
@@ -55,6 +60,12 @@ public class Table {
      */
     public void setNumberOfPlayers(int numberOfPlayers) {
         if(!(numberOfPlayers<2) ||!(numberOfPlayers >5)){
+                    for ( int i = 1; i <=numberOfPlayers ; i++ ) {
+                Player player = new Player("Player" + i);
+                table.add(player);
+                i++;
+            }
+            
             this.numberOfPlayers = numberOfPlayers;
         }
         else{
