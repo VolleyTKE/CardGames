@@ -20,11 +20,8 @@ public class PlayGround2 {
     public static void main(String[] args) {
         // TODO code application logic here
         Table table = new Table();
-        System.out.println(table.player1.hand1.toString());       
-        System.out.println(hand2.toString());       
+        table.setPokerTable(2, 50);
         
-        System.out.println(player1.getWalletSize());
-        System.out.println(player2.toString());
         
         
         
